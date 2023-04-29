@@ -7,10 +7,21 @@
 </head>
 <body>
 <div>
+    <table border="1">
+        <tr>
+            <th>Model</th>
+            <th>Cost</th>
+        </tr>
+        <tr th:each="car : ${cars}">
+            <td th:utext="${car.model}"></td>
+            <td th:utext="${car.cost}"></td>
+        </tr>
+    </table>
+
     <th:block th:each="msg : ${messages}">
         <h1 th:text="${msg}"></h1>
     </th:block>
 </div>
-<a href="/cars">Check Cars</a>
+<a href="/">Return</a>
 </body>
 </html>
