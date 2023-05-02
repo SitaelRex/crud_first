@@ -8,8 +8,11 @@ import web.dao.UserDao;
 import java.util.List;
 @Component
 public class UserServiceImpl implements UserService{
-    @Autowired
     UserDao dao;
+    @Autowired
+    public UserServiceImpl(UserDao dao) {
+        this.dao = dao;
+    }
     @Override
     public void saveUser(User user) {
         dao.saveUser(user);

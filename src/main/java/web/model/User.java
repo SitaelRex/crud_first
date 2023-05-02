@@ -1,9 +1,12 @@
 package web.model;
 
+import org.springframework.context.annotation.Scope;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "crudusers")
+@Scope("prototype")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
