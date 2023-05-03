@@ -1,8 +1,12 @@
 package web.model;
 
-import org.springframework.context.annotation.Scope;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.GenerationType;
 
 @Entity
 @Table(name = "crudusers")
@@ -19,11 +23,10 @@ public class User {
     private String email;
 
     public User() {
-        //this.firstName = "biba";
-        //this.lastName = "bobov";
     }
+
     @Deprecated
-    public User(long id,String firstName, String lastName) {
+    public User(long id, String firstName, String lastName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
