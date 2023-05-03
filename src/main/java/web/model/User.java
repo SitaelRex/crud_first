@@ -16,11 +16,14 @@ public class User {
     @Column(name = "lastName")
     private String lastName;
 
+    private int groupId;
+    private String email;
+
     public User() {
         //this.firstName = "biba";
         //this.lastName = "bobov";
     }
-
+    @Deprecated
     public User(long id,String firstName, String lastName) {
         this.id = id;
         this.firstName = firstName;
@@ -49,5 +52,21 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public int getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(int groupId) {
+        this.groupId = groupId;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

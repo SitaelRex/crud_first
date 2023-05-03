@@ -8,10 +8,19 @@
 <body>
 
 <form th:action="@{/{id}(id=${user.getId()})}" th:method="PATCH" th:object="${user}">
-  <label for="name">Name: </label>
-  <input type="text" th:field="*{firstName}" id="name"/>
-  <br/><br/>
-  <input type="submit" value="Update!"/>
+    <label for="name">Имя: </label>
+    <input type="text" th:field="*{firstName}" id="name"/>
+    <br/>
+    <label for="name2">Фамилия: </label>
+    <input type="text" th:field="*{email}" id="name2"/>
+    <br/>
+    <label for="group">Номер группы: </label>
+    <input type="number" step="1" onchange="this.value = Math.max(0, Math.min(20, parseInt(this.value)))" th:field="*{groupId}" id="group"/>
+    <br/>
+    <label for="email">Электронная почта: </label>
+    <input type="text" th:field="*{email}" id="email"/>
+    <br/>
+    <input type="submit" value="Update!"/>
 </form>
 
 </body>

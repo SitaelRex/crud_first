@@ -39,7 +39,6 @@ public class UserDao {
         Query query = entityManager.createQuery(hql);
         query.setParameter("userId", id);
         query.executeUpdate();
-      //  entityManager.createQuery();
     }
 
     public List<User> getUsersList() {
@@ -49,10 +48,16 @@ public class UserDao {
     }
 
     public void updateUser(long id, User newUser) {
-        String hql = "UPDATE User user set user.firstName = :newFirstName WHERE id = :userId";
+        String hql = "UPDATE User user set user.firstName = :newFirstName," +
+                "user.lastName = :newLastName, " +
+                "user.groupId = :newGroupId," +
+                "user.email = :newEmail  WHERE id = :userId";
         Query query = entityManager.createQuery(hql);
         query.setParameter("userId", (long)id);
         query.setParameter("newFirstName", newUser.getFirstName());
+        query.setParameter("newLastName", newUser.getLastName());
+        query.setParameter("newGroupId", newUser.getGroupId());
+        query.setParameter("newEmail", newUser.getEmail());
         query.executeUpdate();
     }
 }
