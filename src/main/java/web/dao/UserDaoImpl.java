@@ -14,7 +14,7 @@ import java.util.Objects;
 
 public class UserDaoImpl implements UserDao {
     @PersistenceContext
-    EntityManager entityManager;
+    private EntityManager entityManager;
 
     public UserDaoImpl() {
 
@@ -61,19 +61,6 @@ public class UserDaoImpl implements UserDao {
         user.setGroupId(newUser.getGroupId());
         user.setFirstName(newUser.getFirstName());
         user.setLastName(newUser.getLastName());
-       // entityManager.getTransaction().begin();
         entityManager.merge(user);
-       // entityManager.getTransaction().commit();
-        //String hql = "UPDATE User user set user.firstName = :newFirstName," +
-        //        "user.lastName = :newLastName, " +
-        //        "user.groupId = :newGroupId," +
-        //        "user.email = :newEmail  WHERE id = :userId";
-        //Query query = entityManager.createQuery(hql);
-        //query.setParameter("userId", (long) id);
-        //query.setParameter("newFirstName", newUser.getFirstName());
-        //query.setParameter("newLastName", newUser.getLastName());
-        //query.setParameter("newGroupId", newUser.getGroupId());
-        //query.setParameter("newEmail", newUser.getEmail());
-        //query.executeUpdate();
     }
 }

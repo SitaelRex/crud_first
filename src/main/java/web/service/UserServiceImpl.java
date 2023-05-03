@@ -10,7 +10,7 @@ import web.model.User;
 import java.util.List;
 @Component
 public class UserServiceImpl implements UserService {
-    UserDao dao;
+    private final UserDao dao;
     @Autowired
     public UserServiceImpl(UserDao dao) {
         this.dao = dao;

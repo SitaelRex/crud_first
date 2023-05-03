@@ -6,7 +6,6 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "crudusers")
-@Scope("prototype")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
