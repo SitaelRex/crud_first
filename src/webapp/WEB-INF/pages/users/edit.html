@@ -12,7 +12,7 @@
     <input type="text" th:field="*{firstName}" id="name"/>
     <br/>
     <label for="name2">Фамилия: </label>
-    <input type="text" th:field="*{email}" id="name2"/>
+    <input type="text" th:field="*{lastName}" id="name2"/>
     <br/>
     <label for="group">Номер группы: </label>
     <input type="number" step="1" onchange="this.value = Math.max(0, Math.min(20, parseInt(this.value)))" th:field="*{groupId}" id="group"/>
